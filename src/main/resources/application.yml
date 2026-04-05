@@ -1,0 +1,20 @@
+server:
+  port: 8082
+
+spring:
+  r2dbc:
+    url: "r2dbc:postgresql://neondb_owner:npg_4xVtfQK3SPvG@ep-raspy-wildflower-ads5jde6.c-2.us-east-1.aws.neon.tech/samuel_justiniani_22?sslmode=require&channel_binding=require"
+    username: "neondb_owner"
+    password: "npg_4xVtfQK3SPvG"
+  
+  logging:
+    level:
+      org.springframework.r2dbc: DEBUG
+
+ia:
+  llama:
+    url: "https://open-ai21.p.rapidapi.com/conversationllama"
+    key: "ec30cf5d92msh7b1da619ec8415ep19562ejsn9e89a9fc3eab"
+  tts:
+    url: "https://open-ai-text-to-speech1.p.rapidapi.com/"
+    key: "ec30cf5d92msh7b1da619ec8415ep19562ejsn9e89a9fc3eab"
