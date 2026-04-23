@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: samuel-justiniani-23-container
-        image: samuel/as241s5_aej_23-be:1.0   # Reemplaza con tu imagen Docker Hub
+        image: samuelimanol/as241s5_aej_23-be:1.0   # Imagen de tu Docker Hub
         ports:
         - containerPort: 9090
         imagePullPolicy: IfNotPresent
