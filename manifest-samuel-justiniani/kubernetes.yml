@@ -1,0 +1,50 @@
+# MINIKUBE FUNCIONA EN CODESPACE | LOCAL
+# KUBECTL FUNCIONA DIRECTO EN KILLERCODA (SIN MINIKUBE)
+
+# consultar versión de minikube
+minikube version
+
+# consultar si minikube esta en start o stop
+minikube status
+
+# iniciar clúster kubernetes
+minikube start
+
+# ingresar a la carpeta de los manifiestos de kubernetes
+cd manifest-samuel-justiniani
+
+# listar namespace
+kubectl get namespace
+kubectl get ns
+
+# crear los recursos en orden
+kubectl apply -f samuel-justiniani-23-namespace.yml
+kubectl apply -f samuel-justiniani-23-secret.yml
+kubectl apply -f samuel-justiniani-23-sercive.yml
+kubectl apply -f samuel-justiniani-23-deployment.yml
+
+# consultar namespace en uso por "default" | LINUX
+kubectl config view --minify | grep namespace
+
+# consultar namespace en uso por "default" | WINDOWS
+kubectl config view --minify | findstr namespace
+
+# cambiar un namespace en uso por "default" a "samuel-justiniani-23-namespace"
+kubectl config set-context --current --namespace=samuel-justiniani-23-namespace
+
+# consultar todos los recursos de un namespace "samuel-justiniani-23-namespace"
+kubectl get all -n samuel-justiniani-23-namespace
+
+# consultar todos los recursos y secret de un namespace "samuel-justiniani-23-namespace"
+kubectl get all,secrets -n samuel-justiniani-23-namespace
+
+# listar services del namespace
+minikube service samuel-justiniani-23-service -n samuel-justiniani-23-namespace
+minikube service list
+
+# probar el microservicio dentro del clúster con curl (Puerto 9090)
+curl http://192.168.49.2:9090/api/chat
+curl http://192.168.49.2:9090/api/tts
+
+# crear un túnel de puerto la máquina local (host) y el clúster de Kubernetes
+kubectl port-forward service/samuel-justiniani-23-service 9090:9090
