@@ -1,6 +1,0 @@
-# kubectl create namespace samuel-justiniani-23-namespace (COMANDO)
-# kubectl apply -f samuel-justiniani-23-namespace.yml (yml)
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: samuel-justiniani-23-namespace
