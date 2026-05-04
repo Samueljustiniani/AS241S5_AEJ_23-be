@@ -11,6 +11,7 @@ public class TtsResult {
     private String inputText;
     private LocalDateTime createdAt;
     private byte[] audio;
+    private Integer status;
 
     public TtsResult() {}
 
@@ -18,6 +19,7 @@ public class TtsResult {
         this.inputText = inputText;
         this.createdAt = createdAt;
         this.audio = audio;
+        this.status = 1;
     }
 
     public Long getId() { return id; }
@@ -31,4 +33,7 @@ public class TtsResult {
 
     public byte[] getAudio() { return audio; }
     public void setAudio(byte[] audio) { this.audio = audio; }
+
+    public Integer getStatus() { return status; }
+    public void setStatus(Integer status) { this.status = status; }
 }

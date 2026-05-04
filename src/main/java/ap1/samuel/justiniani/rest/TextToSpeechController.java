@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 import ap1.samuel.justiniani.dto.TextToSpeechRequest;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/tts")
 public class TextToSpeechController {

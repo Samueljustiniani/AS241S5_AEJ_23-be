@@ -6,6 +6,7 @@ import ap1.samuel.justiniani.service.ChatService;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/chat")
 public class ChatController {
